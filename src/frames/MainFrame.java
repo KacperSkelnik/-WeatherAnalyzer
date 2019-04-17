@@ -17,7 +17,7 @@ public class MainFrame extends JFrame {
 		this.setResizable(false);
 		Image icon = new ImageIcon(this.getClass().getResource("/mainIcon.png")).getImage();
 		this.setIconImage(new ImageIcon(icon).getImage());
-		this.setTitle("Weather Analyzer");
+		this.setTitle("Weatherasdasd Analyzer");
 		
 		//Menu
 		Menu menu = new Menu();
