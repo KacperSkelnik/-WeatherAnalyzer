@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
 		this.setIconImage(new ImageIcon(icon).getImage());
 		this.setTitle("Weatherkasdkdask Analyzer");
 		
-		//Menu
+		//Menusadasd
 		Menu menu = new Menu();
 		this.setJMenuBar(menu.createMenuBar());
 		
