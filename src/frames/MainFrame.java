@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame {
-
+	//To jest testowy komentarz
 	public MainFrame() throws HeadlessException {
 		this.setSize(640,640);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
