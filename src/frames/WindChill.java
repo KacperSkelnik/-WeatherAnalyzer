@@ -17,7 +17,9 @@ public class WindChill extends JFrame{
 		tTemp = new JTextField("");
 		lWind = new JLabel("Prêdkoœæ wiatru:");
 		tWind = new JTextField("");
+		
 		calculate = new JButton("Oblicz");
+		
 		lWindChill = new JLabel("Temperatura odczuwalna:");
 		tWindChill = new JTextField("");
 		fakeLabel = new JLabel("");

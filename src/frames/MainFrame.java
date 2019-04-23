@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 public class MainFrame extends JFrame {
 	//To jest testowy komentarz
 	//lalala dupaaaa
-	public MainFrame() throws HeadlessException {
+	public MainFrame() throws Exception {
 		this.setSize(640,640);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setResizable(false);
@@ -55,7 +55,7 @@ public class MainFrame extends JFrame {
 
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		MainFrame frame = new MainFrame();
 		frame.setVisible(true);
 	}

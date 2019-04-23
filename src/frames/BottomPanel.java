@@ -15,7 +15,7 @@ public class BottomPanel extends JPanel {
 		this.setLayout(new GridLayout(1,5));
 		Border border = BorderFactory.createLineBorder(Color.BLACK, 3);
 		
-		//Label with shoes advice no i super
+		//Label with shoes advice
 		JLabel shoes_lab = new JLabel("Shoes advice", SwingConstants.CENTER);
 		shoes_lab.setPreferredSize(new Dimension(160, 120));
 		shoes_lab.setBorder(border);
