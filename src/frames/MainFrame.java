@@ -9,15 +9,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame {
-	//To jest testowy komentarz
-	//lalala dupaaaa
+
 	public MainFrame() throws Exception {
 		this.setSize(640,640);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setResizable(false);
 		Image icon = new ImageIcon(this.getClass().getResource("/mainIcon.png")).getImage();
 		this.setIconImage(new ImageIcon(icon).getImage());
-		this.setTitle("Weather dziala Analyzer");
+		this.setTitle("Weather Analyzer");
 		
 		//Menusadasd
 		Menu menu = new Menu();
@@ -51,7 +50,6 @@ public class MainFrame extends JFrame {
 		this.add(panelW.tWindChill);
 			panelW.tWindChill.setBounds(180, 250, 110, 20);
 		this.add(panelW.fakeLabel);
-		
 
 	}
 	
