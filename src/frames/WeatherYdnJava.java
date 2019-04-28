@@ -19,6 +19,7 @@ import java.net.URI;
 
 public class WeatherYdnJava {
 		public String Temp, WindChill, Wind, Humidity, PressureWeather, Visibility;
+		public int status;
     public WeatherYdnJava() throws Exception {
 
         final String appId = "dVtA4T5a";
@@ -39,7 +40,7 @@ public class WeatherYdnJava {
         parameters.add("oauth_timestamp=" + timestamp);
         parameters.add("oauth_version=1.0");
         // Make sure value is encoded
-        parameters.add("location=" + URLEncoder.encode("sunnyvale,ca", "UTF-8"));
+        parameters.add("location=" + URLEncoder.encode("warsaw,pl", "UTF-8"));
         parameters.add("format=json");
         Collections.sort(parameters);
 
@@ -75,7 +76,7 @@ public class WeatherYdnJava {
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create(url + "?location=sunnyvale,ca&format=json"))
+            .uri(URI.create(url + "?location=warsaw,pl&format=json"))
             .header("Authorization", authorizationLine)
             .header("X-Yahoo-App-Id", appId)
             .header("Content-Type", "application/json")
@@ -108,6 +109,10 @@ public class WeatherYdnJava {
         int IndexVisibility = response.body().indexOf("visibility");
         Visibility = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexVisibility + 12,IndexVisibility + 16))*1.609344));
         System.out.print("widocznosc: " + Visibility + "\n");
+        
+        int IndexStatus = response.body().indexOf("code");
+        status = 0;//Integer.parseInt(response.body().substring(IndexStatus + 6,IndexStatus + 8));
+        System.out.print("status: " + status + "\n");
     }
     
     public static void main(String[] args) throws Exception {
