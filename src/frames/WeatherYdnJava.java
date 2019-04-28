@@ -84,35 +84,35 @@ public class WeatherYdnJava {
 
         HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
         
-        System.out.print(response.body()+"\n");
+        //System.out.print(response.body()+"\n");
         
         int IndexTemp = response.body().indexOf("temperature");
         Temp = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexTemp + 13,IndexTemp + 15))-32)*5/9);
-        System.out.print("Temperatura: " + Temp + "\n");
+        //System.out.print("Temperatura: " + Temp + "\n");
         
         int IndexWindChill = response.body().indexOf("chill");
         WindChill = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexWindChill + 7,IndexWindChill + 9))-32)*5/9);
-        System.out.print("Temperatura odczuwalna: " + WindChill + "\n");
+        //System.out.print("Temperatura odczuwalna: " + WindChill + "\n");
         
         int IndexWind = response.body().indexOf("speed");
         Wind = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexWind + 7,IndexWind + 11))*1.609344));
-        System.out.print("predkosc wiatru: " + Wind + "\n");
+        //System.out.print("predkosc wiatru: " + Wind + "\n");
         
         int IndexHumidity = response.body().indexOf("humidity");
         Humidity = response.body().substring(IndexHumidity + 10,IndexHumidity + 12);
-        System.out.print("wilgotnosc: " + Humidity + "\n");
+        //System.out.print("wilgotnosc: " + Humidity + "\n");
         
         int IndexPressureWeather = response.body().indexOf("pressure");
         PressureWeather = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexPressureWeather + 10,IndexPressureWeather + 15))*33.86389));
-        System.out.print("cisnienie atmosferyczne: " + PressureWeather + "\n");
+        //System.out.print("cisnienie atmosferyczne: " + PressureWeather + "\n");
         
         int IndexVisibility = response.body().indexOf("visibility");
         Visibility = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexVisibility + 12,IndexVisibility + 16))*1.609344));
-        System.out.print("widocznosc: " + Visibility + "\n");
+        //System.out.print("widocznosc: " + Visibility + "\n");
         
         int IndexStatus = response.body().indexOf("code");
         status = Integer.parseInt(response.body().substring(IndexStatus + 6,IndexStatus + 8));
-        System.out.print("status: " + status + "\n");
+        //System.out.print("status: " + status + "\n");
     }
     
     public static void main(String[] args) throws Exception {
