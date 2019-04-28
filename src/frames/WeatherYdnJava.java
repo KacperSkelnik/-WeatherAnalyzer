@@ -111,7 +111,7 @@ public class WeatherYdnJava {
         System.out.print("widocznosc: " + Visibility + "\n");
         
         int IndexStatus = response.body().indexOf("code");
-        status = 0;//Integer.parseInt(response.body().substring(IndexStatus + 6,IndexStatus + 8));
+        status = Integer.parseInt(response.body().substring(IndexStatus + 6,IndexStatus + 8));
         System.out.print("status: " + status + "\n");
     }
     
