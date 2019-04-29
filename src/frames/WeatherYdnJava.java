@@ -103,7 +103,7 @@ public class WeatherYdnJava {
         //System.out.print("wilgotnosc: " + Humidity + "\n");
         
         int IndexPressureWeather = response.body().indexOf("pressure");
-        PressureWeather = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexPressureWeather + 10,IndexPressureWeather + 15))*33.86389));
+        PressureWeather = String.format("%.2f", (Float.valueOf(response.body().substring(IndexPressureWeather + 10,IndexPressureWeather + 14))*33.86389));
         //System.out.print("cisnienie atmosferyczne: " + PressureWeather + "\n");
         
         int IndexVisibility = response.body().indexOf("visibility");

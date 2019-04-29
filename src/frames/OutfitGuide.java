@@ -31,11 +31,11 @@ public class OutfitGuide {
 		if(Float.parseFloat(date.WindChill.replace(",", ".")) <= 5 && accessories != "parasol" && danger != true) {
 			shoes = "ciepłe buty";
 		}
-		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 5 && Float.parseFloat(date.WindChill.replace(",",".")) <= 15 
+		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 5 && Float.parseFloat(date.WindChill.replace(",",".")) <= 12 
 				&& accessories != "parasol" && danger != true){
 			shoes = "półbuty";
 		}
-		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 15 && Float.parseFloat(date.WindChill.replace(",",".")) <= 100 
+		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 12 && Float.parseFloat(date.WindChill.replace(",",".")) <= 100 
 				&& accessories != "parasol" && danger != true){
 			shoes = "lekkie buty";
 		}
@@ -67,11 +67,11 @@ public class OutfitGuide {
 				&& danger != true){
 			clothes = "płaszcz";
 		}
-		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 8 && Float.parseFloat(date.WindChill.replace(",",".")) <= 16
+		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 8 && Float.parseFloat(date.WindChill.replace(",",".")) <= 15
 				&& danger != true && accessories != "parasol"){
 			clothes = "lekka kurtka";
 		}
-		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 16 && Float.parseFloat(date.WindChill.replace(",",".")) <= 20
+		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 15 && Float.parseFloat(date.WindChill.replace(",",".")) <= 20
 				&& danger != true && accessories != "parasol"){
 			clothes = "bluza";
 		}
