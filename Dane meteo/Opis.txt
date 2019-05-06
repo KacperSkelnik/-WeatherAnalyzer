@@ -1,0 +1,53 @@
+Format początkowy:
+
+0	Kod stacji                                           9
+1	Nazwa stacji                                        30
+2	Rok                                                  4
+3	Miesiąc                                              2
+4	Dzień                                                2
+5	Średnie dobowe zachmurzenie ogólne [oktanty]         6/1
+6	Status pomiaru NOS                                   1
+7	Średnia dobowa prędkość wiatru [m/s]                 6/1
+8	Status pomiaru FWS                                   1
+9	Średnia dobowa temperatura [°C]                      5/1
+10	Status pomiaru TEMP                                  1
+11	Średnia dobowe ciśnienie pary wodnej [hPa]           5/1
+12	Status pomiaru CPW                                   1
+13	Średnia dobowa wilgotność względna [%]               8/1
+14	Status pomiaru WLGS                                  1
+15	Średnia dobowe ciśnienie na poziomie stacji [hPa]    7/1
+16	Status pomiaru PPPS                                  1
+17	Średnie dobowe ciśnienie na pozimie morza [hPa]      7/1
+18	Status pomiaru PPPM                                  1
+19	Suma opadu dzień  [mm]                               8/1
+20	Status pomiaru WODZ                                  1
+21	Suma opadu noc   [mm]                                8/1
+22	Status pomiaru WONO                                  1
+
+
+
+
+Format ostateczny:
+2	Rok                                                  4
+3	Miesiąc                                              2
+4	Dzień                                                2
+5	Średnie dobowe zachmurzenie ogólne [oktanty]         6/1
+7	Średnia dobowa prędkość wiatru [m/s]                 6/1
+9	Średnia dobowa temperatura [°C]                      5/1
+11	Średnia dobowe ciśnienie pary wodnej [hPa]           5/1
+13	Średnia dobowa wilgotność względna [%]               8/1
+15	Średnia dobowe ciśnienie na poziomie stacji [hPa]    7/1
+17	Średnie dobowe ciśnienie na pozimie morza [hPa]      7/1
+19	Suma opadu dzień  [mm]                               8/1
+21	Suma opadu noc   [mm]                                8/1
+
+Drop: 1,6,8,10,12,14,16,18,20,22
+
+2	Rok                                                  4
+3	Miesiąc                                              2
+4	Dzień                                                2
+7	Średnia dobowa prędkość wiatru [m/s]                 6/1
+9	Średnia dobowa temperatura [°C]                      5/1
+13	Średnia dobowa wilgotność względna [%]               8/1
+15	Średnia dobowe ciśnienie na poziomie stacji [hPa]    7/1
+19	Suma opadu dzień  [mm]                               8/1
