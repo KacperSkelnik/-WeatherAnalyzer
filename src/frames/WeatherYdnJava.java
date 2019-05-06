@@ -17,6 +17,9 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.net.URI;
 
+//Kacper Skelnik
+//Yahoo
+
 public class WeatherYdnJava {
 		public String Temp, WindChill, Wind, Humidity, PressureWeather, Visibility;
 		public int status;

@@ -1,5 +1,7 @@
 package frames;
 
+//Kacper Skelnik
+
 public class OutfitGuide {
 	String shoes, hat, clothes, accessories;
 	boolean danger = false;

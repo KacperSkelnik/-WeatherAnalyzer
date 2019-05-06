@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.awt.Image;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -11,6 +13,11 @@ import javax.swing.JFrame;
 public class MainFrame extends JFrame {
 
 	public MainFrame() throws Exception {
+		
+		//Locale newLocale = new Locale("en","US");
+		//Locale.setDefault(newLocale);
+		//ResourceBundle resBundle = ResourceBundle.getBundle("frames.Bundle", Locale.ENGLISH);
+		
 		this.setSize(640,640);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setResizable(false);

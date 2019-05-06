@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 
+//Kacper Skelnik
 
 public class WindChill extends JFrame{
 	JLabel label, lTemp, lWind, lWindChill, fakeLabel;
