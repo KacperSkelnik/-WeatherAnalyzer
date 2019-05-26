@@ -1,5 +1,6 @@
 package frames;
 
+import java.awt.Dimension;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,10 +22,12 @@ public class WindChill extends JFrame{
 	double temp = 0;
 	public WindChill() throws Exception{
 		
-		label = new JLabel("Kalkulator temp. odczuwalnej", SwingConstants.CENTER);
-		lTemp = new JLabel("Temperatura:");
+		Language language = new Language();
+		
+		label = new JLabel(language.Res.getString("windchill_calculator"), SwingConstants.CENTER);
+		lTemp = new JLabel(language.Res.getString("temperature"));
 		tTemp = new JTextField("0");
-		lWind = new JLabel("Prêdkoœæ wiatru:");
+		lWind = new JLabel(language.Res.getString("wind_velocity"));
 		tWind = new JTextField("0");
 		
 		ActionListener buttonListener = new ActionListener() {
@@ -38,10 +41,10 @@ public class WindChill extends JFrame{
 	 			tWindChill.setText(String.format ("%.2f",windChill));
 	 		}	
 	 	};
-		calculate = new JButton("Oblicz");
+		calculate = new JButton(language.Res.getString("calculate"));
 		calculate.addActionListener(buttonListener);
 		
-		lWindChill = new JLabel("Temperatura odczuwalna:");
+		lWindChill = new JLabel(language.Res.getString("windchill"));
 		tWindChill = new JTextField(String.valueOf(windChill));
 		fakeLabel = new JLabel("");
 	}

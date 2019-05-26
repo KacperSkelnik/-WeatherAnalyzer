@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Locale;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -14,6 +15,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 public class Menu extends JFrame implements ActionListener, Icon{
+	
+	Language lang = new Language();
+	
 	JMenuBar menuBar;
 	JMenu menuMenu, menuLanguage;
 	JMenuItem mPolish,mEnglish,mTemp,mRainfall,mHumidity,mPressureWeather;
@@ -34,29 +38,55 @@ public class Menu extends JFrame implements ActionListener, Icon{
 	return windowListener;
 	}
 	
+	private ActionListener setLanguage(String language, String country) {
+		ActionListener LanguageListener = new ActionListener() {
+		@SuppressWarnings("static-access")
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+				MainFrame.frame.setVisible(false);
+			
+			lang.locale.setDefault(new Locale(language,country));
+			
+
+			try {
+				MainFrame.main(new String[]{});
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+
+		}
+	};
+	return LanguageListener;
+	}
+	
+	
 	public JMenuBar createMenuBar() {		
 		menuBar = new JMenuBar();
-	 	menuMenu = new JMenu("Opcje");
-	 	mTemp = new JMenuItem("Wykres temperatury");
+	 	menuMenu = new JMenu(lang.Res.getString("options"));
+	 	mTemp = new JMenuItem(lang.Res.getString("temperature_chart"));
 	 	mTemp.addActionListener(plotWindow("Temperature Plot"));
-	 	mRainfall = new JMenuItem("Wykres opadów");
+	 	mRainfall = new JMenuItem(lang.Res.getString("rainfall_chart"));
 	 	mRainfall.addActionListener(plotWindow("Rain Fall Plot"));
-	 	mHumidity = new JMenuItem("Wykres wilgotnoœci");
+	 	mHumidity = new JMenuItem(lang.Res.getString("humidity_chart"));
 	 	mHumidity.addActionListener(plotWindow("Humidity Plot"));
-	 	mPressureWeather = new JMenuItem("Wykres ciœnienia atmosferycznego");
+	 	mPressureWeather = new JMenuItem(lang.Res.getString("atmospheric_pressure_chart"));
 	 	mPressureWeather.addActionListener(plotWindow("Pressure Plot"));
 	 	menuMenu.add(mTemp);
 	 	menuMenu.add(mRainfall);
 	 	menuMenu.add(mHumidity);
 	 	menuMenu.add(mPressureWeather);
 	 	
-	 	menuLanguage = new JMenu("Jêzyk");
+	 	menuLanguage = new JMenu(lang.Res.getString("language"));
 	 	mPolish = new JMenuItem("Polski");
 	 	Image polishFlag = new ImageIcon(this.getClass().getResource("/pf.png")).getImage();
 	 	mPolish.setIcon(new ImageIcon(polishFlag));
+	 	mPolish.addActionListener(setLanguage("pl", "PL"));
 	 	mEnglish = new JMenuItem("English");
 	 	Image britishFlag = new ImageIcon(this.getClass().getResource("/ef.png")).getImage();
 	 	mEnglish.setIcon(new ImageIcon(britishFlag));
+	 	mEnglish.addActionListener(setLanguage("en", "GB"));
 	 	menuLanguage.add(mPolish);
 	 	menuLanguage.add(mEnglish);
 	 	menuBar.add(menuMenu);

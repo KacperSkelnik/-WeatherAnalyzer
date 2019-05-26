@@ -18,6 +18,9 @@ public class WeatherlPanel extends JPanel {
 	final String degree  = "\u00b0";
 	
 	public WeatherlPanel() throws Exception {
+		
+		Language language = new Language();
+		
 		this.setBackground(Color.WHITE);
 		this.setPreferredSize(new Dimension(320, 480));
 		Border border = BorderFactory.createMatteBorder(3, 6, 0, 3, Color.BLACK);
@@ -25,24 +28,24 @@ public class WeatherlPanel extends JPanel {
 		
 		WeatherYdnJava weatherDate = new WeatherYdnJava();
 		
-		JLabel label = new JLabel("Dane pogodowe: ", SwingConstants.CENTER);
+		JLabel label = new JLabel(language.Res.getString("weather_data"), SwingConstants.CENTER);
 		JLabel fakeLabel = new JLabel("");
-		lTemp = new JLabel("Temperatura: ", SwingConstants.CENTER);
+		lTemp = new JLabel(language.Res.getString("temperature"), SwingConstants.CENTER);
 	 	tTemp = new JTextField(weatherDate.Temp + " " + degree+"C");
 	 	tTemp.setEditable(false);
-	 	lWindChill = new JLabel("Temp. odczuwalna : ", SwingConstants.CENTER);
+	 	lWindChill = new JLabel(language.Res.getString("windchill"), SwingConstants.CENTER);
 	 	tWindChill = new JTextField(weatherDate.WindChill + " " + degree+"C");
 	 	tWindChill.setEditable(false);
-	 	lWind = new JLabel("Prêdkoœæ wiatru : ", SwingConstants.CENTER);
+	 	lWind = new JLabel(language.Res.getString("wind_velocity"), SwingConstants.CENTER);
 	 	tWind = new JTextField(weatherDate.Wind + " " + "km/h");
 	 	tWind.setEditable(false);
-	 	lPressureWeather = new JLabel("Ciœnienie atmosferyczne: ", SwingConstants.CENTER);
+	 	lPressureWeather = new JLabel(language.Res.getString("atmospheric_pressure"), SwingConstants.CENTER);
 	 	tPressureWeather = new JTextField(weatherDate.PressureWeather + " " + "hPa");
 	 	tPressureWeather.setEditable(false);
-	 	lVisibility = new JLabel("Widocznoœæ: ", SwingConstants.CENTER);
+	 	lVisibility = new JLabel(language.Res.getString("visibility"), SwingConstants.CENTER);
 	 	tVisibility = new JTextField(weatherDate.Visibility + " " + "km");
 	 	tVisibility.setEditable(false);
-	 	lHumidity = new JLabel("Wilgotnoœæ: ", SwingConstants.CENTER);
+	 	lHumidity = new JLabel(language.Res.getString("humidity"), SwingConstants.CENTER);
 	 	tHumidity = new JTextField(weatherDate.Humidity + " " + "%");
 	 	tHumidity.setEditable(false);
 	 	

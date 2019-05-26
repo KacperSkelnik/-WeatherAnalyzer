@@ -3,6 +3,9 @@ package frames;
 //Kacper Skelnik
 
 public class OutfitGuide {
+	
+	Language language = new Language();
+	
 	String shoes, hat, clothes, accessories;
 	boolean danger = false;
 	
@@ -12,74 +15,74 @@ public class OutfitGuide {
 		if(date.status == 5 || date.status == 6 || date.status == 7 || date.status == 8 || date.status == 9 
 		|| date.status == 10 || date.status == 11 || date.status == 12 || date.status == 17 || date.status == 18
 		|| date.status == 35 || date.status == 40 ) {
-			accessories = "parasol";
+			accessories = language.Res.getString("umbrella");
 		}
 		else if((date.status == 32 || date.status == 34) && Float.parseFloat(date.WindChill.replace(",",".")) >= 18) {
-			accessories = "okulary przeciwsłoneczne";
+			accessories = language.Res.getString("sunglasses");
 		}	
 		else if(date.status == 0 || date.status == 1 || date.status == 2 || date.status == 3 || date.status == 42 || date.status == 4) {
-			shoes = "lepiej";
-			hat = "zostań";
-			clothes = "w";
-			accessories = "domu";
+			shoes = language.Res.getString("better");
+			hat = language.Res.getString("stay");
+			clothes = language.Res.getString("at");
+			accessories = language.Res.getString("home");
 			danger = true;
 		}
 		else{
-			accessories = "dużo uśmiechu :)";
+			accessories = language.Res.getString("a_lot_of_smile");
 		}
 		
 		
 		
 		if(Float.parseFloat(date.WindChill.replace(",", ".")) <= 5 && accessories != "parasol" && danger != true) {
-			shoes = "ciepłe buty";
+			shoes = language.Res.getString("warm_shoes");
 		}
 		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 5 && Float.parseFloat(date.WindChill.replace(",",".")) <= 12 
 				&& accessories != "parasol" && danger != true){
-			shoes = "półbuty";
+			shoes = language.Res.getString("shoes");
 		}
 		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 12 && Float.parseFloat(date.WindChill.replace(",",".")) <= 100 
 				&& accessories != "parasol" && danger != true){
-			shoes = "lekkie buty";
+			shoes = language.Res.getString("trainers");
 		}
-		else if(Float.parseFloat(date.WindChill.replace(",", ".")) >= 7 && Float.parseFloat(date.WindChill.replace(",",".")) <= 100 
+		else if(Float.parseFloat(date.WindChill.replace(",", ".")) >= 5 && Float.parseFloat(date.WindChill.replace(",",".")) <= 100 
 				&& accessories == "parasol" && danger != true){
-			shoes = "kalosze";
+			shoes = language.Res.getString("wellingtons");
 		}
 		
 		
 		
 		if(Float.parseFloat(date.WindChill.replace(",", ".")) <= 7 && danger != true) {
-			hat = "ciepła czapka";
+			hat = language.Res.getString("warm_hat");
 		}
 		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 7 && Float.parseFloat(date.WindChill.replace(",",".")) <= 20 
-				&& danger != true && accessories != "parasol"){
-			hat = "czapka z daszkiem";
+				&& danger != true){
+			hat = language.Res.getString("baseball_cap");
 		}
 		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 20 && Float.parseFloat(date.WindChill.replace(",",".")) <= 100
 				&& danger != true){
-			hat = "słomkowy kapelusz";
+			hat = language.Res.getString("straw_hat");
 		}
 		
 		
 		
 		if(Float.parseFloat(date.WindChill.replace(",", ".")) <= 0 && danger != true) {
-			clothes = "gruba kurtka";
+			clothes = language.Res.getString("warm_jacket");
 		}
 		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 0 && Float.parseFloat(date.WindChill.replace(",",".")) <= 8 
 				&& danger != true){
-			clothes = "płaszcz";
+			clothes = language.Res.getString("coat");
 		}
 		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 8 && Float.parseFloat(date.WindChill.replace(",",".")) <= 15
 				&& danger != true && accessories != "parasol"){
-			clothes = "lekka kurtka";
+			clothes = language.Res.getString("jacket");
 		}
 		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 15 && Float.parseFloat(date.WindChill.replace(",",".")) <= 20
 				&& danger != true && accessories != "parasol"){
-			clothes = "bluza";
+			clothes = language.Res.getString("hoodie");
 		}
 		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 20 && Float.parseFloat(date.WindChill.replace(",",".")) <= 24
 				&& danger != true && accessories != "parasol"){
-			clothes = "koszula";
+			clothes = language.Res.getString("shirt");
 		}
 		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 24 && Float.parseFloat(date.WindChill.replace(",",".")) <= 35
 				&& danger != true){
@@ -91,7 +94,7 @@ public class OutfitGuide {
 		}
 		else if(Float.parseFloat(date.WindChill.replace(",", ".")) > 8 && Float.parseFloat(date.WindChill.replace(",",".")) <= 24
 				&& accessories == "parasol" && danger != true){
-			clothes = "kurtka przeciwdeszczowa";
+			clothes = language.Res.getString("rain_jacket");
 		}
 	}
 }

@@ -9,14 +9,14 @@ import java.util.ResourceBundle;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 public class MainFrame extends JFrame {
-
+	
+		static MainFrame frame;
+	
 	public MainFrame() throws Exception {
-		
-		//Locale newLocale = new Locale("en","US");
-		//Locale.setDefault(newLocale);
-		//ResourceBundle resBundle = ResourceBundle.getBundle("frames.Bundle", Locale.ENGLISH);
 		
 		this.setSize(640,640);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -61,7 +61,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		MainFrame frame = new MainFrame();
+		frame = new MainFrame();
 		frame.setVisible(true);
 	}
 

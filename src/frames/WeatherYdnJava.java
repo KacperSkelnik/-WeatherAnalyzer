@@ -98,7 +98,7 @@ public class WeatherYdnJava {
         //System.out.print("Temperatura odczuwalna: " + WindChill + "\n");
         
         int IndexWind = response.body().indexOf("speed");
-        Wind = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexWind + 7,IndexWind + 11))*1.609344));
+        Wind = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexWind + 7,IndexWind + 10))*1.609344));
         //System.out.print("predkosc wiatru: " + Wind + "\n");
         
         int IndexHumidity = response.body().indexOf("humidity");
