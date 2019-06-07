@@ -2,6 +2,8 @@ package frames;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
@@ -11,22 +13,22 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
-public class WeatherlPanel extends JPanel {
+public class WeatherlPanel extends JPanel{
 	
 	JLabel lTemp,lWindChill,lWind, lVisibility, lHumidity, lPressureWeather;
 	JTextField tTemp, tWindChill,tWind, tVisibility, tHumidity, tPressureWeather;
 	final String degree  = "\u00b0";
+	boolean running = true;
 	
-	public WeatherlPanel() throws Exception {
+	public WeatherlPanel() throws Exception{
 		
 		Language language = new Language();
+		WeatherYdnJava weatherDate = new WeatherYdnJava();
 		
 		this.setBackground(Color.WHITE);
 		this.setPreferredSize(new Dimension(320, 480));
 		Border border = BorderFactory.createMatteBorder(3, 6, 0, 3, Color.BLACK);
 		this.setBorder(border);
-		
-		WeatherYdnJava weatherDate = new WeatherYdnJava();
 		
 		JLabel label = new JLabel(language.Res.getString("weather_data"), SwingConstants.CENTER);
 		JLabel fakeLabel = new JLabel("");

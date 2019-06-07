@@ -43,12 +43,10 @@ public class Menu extends JFrame implements ActionListener, Icon{
 		@SuppressWarnings("static-access")
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
+				
+				lang.locale.setDefault(new Locale(language,country));
 				MainFrame.frame.setVisible(false);
-			
-			lang.locale.setDefault(new Locale(language,country));
-			
-
+				MainFrame.stop();
 			try {
 				MainFrame.main(new String[]{});
 			} catch (Exception e1) {

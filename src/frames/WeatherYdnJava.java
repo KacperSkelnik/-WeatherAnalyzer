@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Base64;
 import java.util.Base64.Encoder;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.Random;
 import java.util.Collections;
 import java.net.URLEncoder;
@@ -23,6 +25,8 @@ import java.net.URI;
 public class WeatherYdnJava {
 		public String Temp, WindChill, Wind, Humidity, PressureWeather, Visibility;
 		public int status;
+		int pauza = 100000000;
+		
     public WeatherYdnJava() throws Exception {
 
         final String appId = "dVtA4T5a";
@@ -116,9 +120,5 @@ public class WeatherYdnJava {
         int IndexStatus = response.body().indexOf("code");
         status = Integer.parseInt(response.body().substring(IndexStatus + 6,IndexStatus + 8));
         //System.out.print("status: " + status + "\n");
-    }
-    
-    public static void main(String[] args) throws Exception {
-    	WeatherYdnJava wr = new WeatherYdnJava();
     }
 }
