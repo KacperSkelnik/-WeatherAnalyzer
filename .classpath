@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="Liblares/httpclient-4.5.8.jar"/>
 	<classpathentry kind="lib" path="Liblares/jfreechart-1.0.17.jar"/>
 	<classpathentry kind="lib" path="Liblares/jcommon-1.0.21.jar"/>
+	<classpathentry kind="lib" path="Liblares/mysql-connector.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -26,12 +26,12 @@ public class Menu extends JFrame implements ActionListener, Icon{
 		createMenuBar();
 	}
 	
-	private ActionListener plotWindow(String name) {
+	private ActionListener plotWindow(String name, String query, String x_plot, String y_plot) {
 		ActionListener windowListener = new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			PlotFrame frame1 = new PlotFrame(name);
+			PlotFrame frame1 = new PlotFrame(name, query, x_plot, y_plot);
 			frame1.setVisible(true);
 		}
 	};
@@ -64,13 +64,13 @@ public class Menu extends JFrame implements ActionListener, Icon{
 		menuBar = new JMenuBar();
 	 	menuMenu = new JMenu(lang.Res.getString("options"));
 	 	mTemp = new JMenuItem(lang.Res.getString("temperature_chart"));
-	 	mTemp.addActionListener(plotWindow("Temperature Plot"));
+	 	mTemp.addActionListener(plotWindow("Temperature Plot", "SELECT Date,Temp FROM Weather_Data","Date","Temperature [°C]"));
 	 	mRainfall = new JMenuItem(lang.Res.getString("rainfall_chart"));
-	 	mRainfall.addActionListener(plotWindow("Rain Fall Plot"));
+	 	mRainfall.addActionListener(plotWindow("Rain Fall Plot", "SELECT Date,Rain FROM Weather_Data","Date","Rain [mm]"));
 	 	mHumidity = new JMenuItem(lang.Res.getString("humidity_chart"));
-	 	mHumidity.addActionListener(plotWindow("Humidity Plot"));
+	 	mHumidity.addActionListener(plotWindow("Humidity Plot", "SELECT Date,Humidity FROM Weather_Data","Date","Humidity [%]"));
 	 	mPressureWeather = new JMenuItem(lang.Res.getString("atmospheric_pressure_chart"));
-	 	mPressureWeather.addActionListener(plotWindow("Pressure Plot"));
+	 	mPressureWeather.addActionListener(plotWindow("Pressure Plot", "SELECT Date,Press FROM Weather_Data","Date","Pressure [hPa]"));
 	 	menuMenu.add(mTemp);
 	 	menuMenu.add(mRainfall);
 	 	menuMenu.add(mHumidity);
