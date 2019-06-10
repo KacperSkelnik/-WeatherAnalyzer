@@ -27,6 +27,9 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 public class PlotFrame extends JFrame {
 	public PlotFrame(String name, String query, String x_plot, String y_plot) {
+		
+		Language lang = new Language();
+		
 		this.setSize(1080, 640);
 		JPanel panel_1 = new JPanel();
 		this.add(panel_1);
@@ -35,9 +38,9 @@ public class PlotFrame extends JFrame {
 		this.setTitle(name);
 		
 		JMenuBar menuBarPlot = new JMenuBar();
-		JMenu menuPlot = new JMenu("Opcje");
-		JMenuItem plotColor = new JMenuItem("Kolor wykresu");
-		JMenuItem plotBGColor = new JMenuItem("Kolor t³a");
+		JMenu menuPlot = new JMenu(lang.Res.getString("options"));
+		JMenuItem plotColor = new JMenuItem(lang.Res.getString("chart_color"));
+		JMenuItem plotBGColor = new JMenuItem(lang.Res.getString("background_color"));
 		menuPlot.add(plotColor);
 		menuPlot.add(plotBGColor);
 		menuBarPlot.add(menuPlot);
@@ -57,7 +60,7 @@ public class PlotFrame extends JFrame {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					Color color = JColorChooser.showDialog(null, "Wybor koloru", Color.WHITE);
+					Color color = JColorChooser.showDialog(null, lang.Res.getString("background_color"), Color.WHITE);
 					chart.getPlot().setBackgroundPaint(color);
 				}
 			});
@@ -67,7 +70,7 @@ public class PlotFrame extends JFrame {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					Color color = JColorChooser.showDialog(null, "Wybor koloru", Color.RED);
+					Color color = JColorChooser.showDialog(null, lang.Res.getString("chart_color"), Color.RED);
 					renderer.setPaint(color);
 				}
 			});

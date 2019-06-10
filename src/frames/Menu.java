@@ -64,13 +64,13 @@ public class Menu extends JFrame implements ActionListener, Icon{
 		menuBar = new JMenuBar();
 	 	menuMenu = new JMenu(lang.Res.getString("options"));
 	 	mTemp = new JMenuItem(lang.Res.getString("temperature_chart"));
-	 	mTemp.addActionListener(plotWindow("Temperature Plot", "SELECT Date,Temp FROM Weather_Data","Date","Temperature [°C]"));
+	 	mTemp.addActionListener(plotWindow(lang.Res.getString("temperature_chart"), "SELECT Date,Temp FROM Weather_Data","Date","Temperature [°C]"));
 	 	mRainfall = new JMenuItem(lang.Res.getString("rainfall_chart"));
-	 	mRainfall.addActionListener(plotWindow("Rain Fall Plot", "SELECT Date,Rain FROM Weather_Data","Date","Rain [mm]"));
+	 	mRainfall.addActionListener(plotWindow(lang.Res.getString("rainfall_chart"), "SELECT Date,Rain FROM Weather_Data","Date","Rain [mm]"));
 	 	mHumidity = new JMenuItem(lang.Res.getString("humidity_chart"));
-	 	mHumidity.addActionListener(plotWindow("Humidity Plot", "SELECT Date,Humidity FROM Weather_Data","Date","Humidity [%]"));
+	 	mHumidity.addActionListener(plotWindow(lang.Res.getString("humidity_chart"), "SELECT Date,Humidity FROM Weather_Data","Date","Humidity [%]"));
 	 	mPressureWeather = new JMenuItem(lang.Res.getString("atmospheric_pressure_chart"));
-	 	mPressureWeather.addActionListener(plotWindow("Pressure Plot", "SELECT Date,Press FROM Weather_Data","Date","Pressure [hPa]"));
+	 	mPressureWeather.addActionListener(plotWindow(lang.Res.getString("atmospheric_pressure_chart"), "SELECT Date,Press FROM Weather_Data","Date","Pressure [hPa]"));
 	 	menuMenu.add(mTemp);
 	 	menuMenu.add(mRainfall);
 	 	menuMenu.add(mHumidity);
