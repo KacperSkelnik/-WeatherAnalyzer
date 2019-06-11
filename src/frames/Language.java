@@ -1,4 +1,4 @@
-package frames;
+package frames; //Kacper Skelnik
 
 import java.util.Locale;
 import java.util.ResourceBundle;

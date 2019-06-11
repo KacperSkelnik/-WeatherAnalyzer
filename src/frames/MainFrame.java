@@ -1,24 +1,18 @@
-package frames;
+package frames; //Kacper Skelnik Wojtek Tyczyñski
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Locale;
-import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
 
 public class MainFrame extends JFrame implements Runnable{
 		
@@ -94,7 +88,7 @@ public class MainFrame extends JFrame implements Runnable{
 
 	}
 	
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception { //Kacper Skelnik
 		frame = new MainFrame();
 		frame.setVisible(true);
 		
@@ -104,7 +98,7 @@ public class MainFrame extends JFrame implements Runnable{
 	}	
 
 	@Override
-	public void run() {
+	public void run() { //Kacper Skelnik
 		
 		while(!stop) {
 		try {
@@ -139,7 +133,7 @@ public class MainFrame extends JFrame implements Runnable{
 		}
 	}
 	
-	public static void stop() {
+	public static void stop() { //Kacper Skelnik
         frame.stop = true;
     }
 }

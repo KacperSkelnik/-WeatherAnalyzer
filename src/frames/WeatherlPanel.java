@@ -1,12 +1,9 @@
-package frames;
+package frames; //Kacper Skelnik
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import javax.swing.BorderFactory;
-import javax.swing.GroupLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;

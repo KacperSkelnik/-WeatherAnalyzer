@@ -1,4 +1,4 @@
-package frames;
+package frames; //Wojtek Tyczyñski
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -6,7 +6,6 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.Locale.Category;
 
 import javax.swing.ImageIcon;
 import javax.swing.JColorChooser;
@@ -22,8 +21,6 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.jdbc.JDBCCategoryDataset;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
 
 public class PlotFrame extends JFrame {
 	public PlotFrame(String name, String query, String x_plot, String y_plot) {

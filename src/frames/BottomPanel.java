@@ -1,4 +1,4 @@
-package frames;
+package frames; //Wojtek Tyczyñski
 
 import java.awt.Color;
 import java.awt.Dimension;

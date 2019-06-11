@@ -1,7 +1,5 @@
-package frames;
+package frames; //Kacper Skelnik
 
-import java.awt.Dimension;
-import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,7 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 
-//Kacper Skelnik
 
 public class WindChill extends JFrame{
 	JLabel label, lTemp, lWind, lWindChill, fakeLabel;

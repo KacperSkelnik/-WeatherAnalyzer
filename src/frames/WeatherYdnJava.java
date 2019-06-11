@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Base64;
 import java.util.Base64.Encoder;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.Random;
 import java.util.Collections;
 import java.net.URLEncoder;
@@ -91,34 +89,25 @@ public class WeatherYdnJava {
 
         HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
         
-        //System.out.print(response.body()+"\n");
-        
         int IndexTemp = response.body().indexOf("temperature");
         Temp = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexTemp + 13,IndexTemp + 15))-32)*5/9);
-        //System.out.print("Temperatura: " + Temp + "\n");
         
         int IndexWindChill = response.body().indexOf("chill");
         WindChill = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexWindChill + 7,IndexWindChill + 9))-32)*5/9);
-        //System.out.print("Temperatura odczuwalna: " + WindChill + "\n");
         
         int IndexWind = response.body().indexOf("speed");
         Wind = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexWind + 7,IndexWind + 10))*1.609344));
-        //System.out.print("predkosc wiatru: " + Wind + "\n");
         
         int IndexHumidity = response.body().indexOf("humidity");
         Humidity = response.body().substring(IndexHumidity + 10,IndexHumidity + 12);
-        //System.out.print("wilgotnosc: " + Humidity + "\n");
         
         int IndexPressureWeather = response.body().indexOf("pressure");
         PressureWeather = String.format("%.2f", (Float.valueOf(response.body().substring(IndexPressureWeather + 10,IndexPressureWeather + 14))*33.86389));
-        //System.out.print("cisnienie atmosferyczne: " + PressureWeather + "\n");
         
         int IndexVisibility = response.body().indexOf("visibility");
         Visibility = String.format ("%.2f", (Float.valueOf(response.body().substring(IndexVisibility + 12,IndexVisibility + 16))*1.609344));
-        //System.out.print("widocznosc: " + Visibility + "\n");
         
         int IndexStatus = response.body().indexOf("code");
         status = Integer.parseInt(response.body().substring(IndexStatus + 6,IndexStatus + 8));
-        //System.out.print("status: " + status + "\n");
     }
 }

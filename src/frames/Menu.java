@@ -1,4 +1,4 @@
-package frames;
+package frames; //Kacper Skelnik
 
 import java.awt.Component;
 import java.awt.Graphics;

@@ -1,4 +1,4 @@
-package frames;
+package frames; //Wojtek Tyczyñski
 
 import java.sql.Connection;
 import java.sql.DriverManager;
